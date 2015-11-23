@@ -10,22 +10,112 @@
     
     <link rel="stylesheet" href="../../3rdParty/bootstrap-3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/vorlesung.css">
+    
+    <script src="../../3rdParty/Plotly/plotly.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Überschrift</h1>
+        <h1>Statistik</h1>
         <p>
-            Text 1
+            
         </p>
         
-        <h2>Überschrift 2</h2>
-        <p>
-            Text 2
-        </p>
+        <h2>Allgemeines</h2>
+        <div>
+            Stetige Werte - Zwischen den Werten gibt es immer noch weitere d.h. sie sind abzählbar. Beispiele: Längen- und Breitengrade, Größe, Gewicht, Bremsweg<br>
+            Diskrete Werte - Zwischen den Werten gibt es keine weiteren. Beispiele: Studiemssemester, Anzahl der Personen in einem Raum
+        </div>
+        
+        <h2>Eindimensionale <a href="http://mars.wiwi.hu-berlin.de/mediawiki/mmstat_de/index.php/Eindimensionale_H%C3%A4ufigkeitsverteilung_-_STAT-Eindimensionale_H%C3%A4ufigkeitsverteilung">Häufigkeitsverteilung</a></h2>
+        <div>
+            Wir gehen von n Beobachtungen eines diskreten Merkmals aus: <div class="equation">x1, x2, ..., xn</div>
+            Wie oft ein bestimmtes Merkmal aufgetreten ist, bezeichnen wir mit: <div class="equation">nj (j = 1, ..., m).</div>
+            Dann ist <div class="equation"><math xmlns="http://www.w3.org/1998/Math/MathML"><munderover><mo>&#x02211;</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>m</mi></munderover><mi>n</mi><mi>j</mi><mo>&#x000A0;</mo><mo>=</mo><mo>&#x02009;</mo><mi>n</mi></math></div>
+        </div>
+        
+        <h3>Beispiel: Haushaltsgröße</h3>
+        <div>
+            <div class="row">
+                <div class="col-xs-12 col-lg-6" id="chart1"></div>
+                <div class="col-xs-12 col-lg-6" id="chart2"></div>
+                <div class="col-xs-12 col-lg-6" id="chart3"></div>
+                <div class="col-xs-12 col-lg-6" id="chart4"></div>
+            </div>
+            <script>
+                var x = ["1_", "2_", "3_", "4_", ">5"];
+                var data1 = [{
+                    x: x,
+                    y: [7.1, 14.7, 17.0, 16.8, 44.4],
+                    type: 'bar'
+                }];
+                
+                var layout1 = {
+                    title: '1900',
+                    xaxis: {title: 'Haushaltsgröße'},
+                    yaxis: {title: 'rel. Häufigkeit in %'},
+                    width: 500,
+                    height: 300,
+                    bargap: 0.1
+                };
+                
+                var data2 = [{
+                    x: x,
+                    y: [6.7, 17.7, 22.5, 19.7, 33.3],
+                    type: 'bar'
+                }];
+                
+                var layout2 = {
+                    title: '1925',
+                    xaxis: {title: 'Haushaltsgröße'},
+                    yaxis: {title: 'rel. Häufigkeit in %'},
+                    width: 500,
+                    height: 300,
+                    bargap: 0.1
+                };
+                
+                var data3 = [{
+                    x: x,
+                    y: [19.4, 25.3, 23.0, 16.2, 16.1],
+                    type: 'bar'
+                }];
+                
+                var layout3 = {
+                    title: '1950',
+                    xaxis: {title: 'Haushaltsgröße'},
+                    yaxis: {title: 'rel. Häufigkeit in %'},
+                    width: 500,
+                    height: 300,
+                    bargap: 0.1
+                };
+                
+                var data4 = [{
+                    x: x,
+                    y: [35.0, 30.2, 16.7, 12.8, 5.3],
+                    type: 'bar'
+                }];
+                
+                var layout4 = {
+                    title: '1990',
+                    xaxis: {title: 'Haushaltsgröße'},
+                    yaxis: {title: 'rel. Häufigkeit in %'},
+                    width: 500,
+                    height: 300,
+                    bargap: 0.1
+                };
+                
+                Plotly.newPlot('chart1', data1, layout1);
+                Plotly.newPlot('chart2', data2, layout2);
+                Plotly.newPlot('chart3', data3, layout3);
+                Plotly.newPlot('chart4', data4, layout4);
+            </script>
+        </div>
     </div>
     
     <script src="../../3rdParty/jQuery-2.1.4/jQuery.min.js"></script>
     <script src="../../3rdParty/bootstrap-3.3.5/js/bootstrap.min.js"></script>
     <script src="../../js/vorlesung.js"></script>
+    <script>
+        
+    </script>
 </body>
 </html>
